@@ -1,0 +1,13 @@
+@media only screen and (max-width: 1150px) { 
+	.myButton{
+		position: relative;
+		left: 80px;
+		right:25%;
+		font-size: 14px;
+		width:60%;
+		height: auto;
+		margin: 0 auto;
+		bottom: 30px;
+		margin-bottom:10px;
+	}
+}
