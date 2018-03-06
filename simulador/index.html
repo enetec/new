@@ -154,12 +154,12 @@
 <option value="SE">SE</option>
 <option value="TO">TO</option>
                 </select>
-                <input id="nome" name="nome" type="text" class="form-control" placeholder="Nome" required>
-                  <input id="email" name="email" type="email" class="form-control" placeholder="E-mail" required>
-              <input id="consumo" name="consumo"type="number" class="form-control" placeholder="Digite seu consumo, em kwh" required>
+                <input id="name" name="nome" type="text" class="form-control" placeholder="Nome" required/>
+                  <input name="email" type="email" class="form-control" placeholder="E-mail" required/>
+              <input id="cons" name="consumo"type="number" class="form-control" placeholder="Digite seu consumo, em kwh" required/>
 
-            <input type="submit" placeholder="Simular" class="btn btn-default" id="simule">
-            <input type="hidden" name="_next" value="#div-simulador">
+            <input type="submit" placeholder="Simular" class="btn btn-default" id="simule"/>
+            <input type="hidden" name="_next" value="#"/>
           </form>
           <div style="display:none" id="div-simulador">
             <p id="texto-nome"></p>
@@ -330,14 +330,14 @@ media=media + inc[i];
 }
  media=Math.floor(100*media/12)/100;
   var input=document.getElementsByTagName("input");
-  var placa=Math.floor(3.6*document.getElementById("consumo").value/(media*0.5*30*2.01));
+  var placa=Math.floor(3.6*document.getElementById("cons").value/(media*0.5*30*2.01));
   var preço=1.05*(placa*700 +20000);
   var preçomax=1.1*preço;
   var payback= 1000*preço/(160*placa*0.6*8*365);
 
 if(input[0].value!="" && input[1].value!="" && input[2].value!=""){
 
-  document.getElementById("texto-nome").innerHTML="Prezado " + document.getElementById("nome").value + ",";
+  document.getElementById("texto-nome").innerHTML="Prezado " + document.getElementById("name").value + ",";
 document.getElementById("texto-placas").innerHTML="Número de placas necessárias: "+ placa +
 " de "+ Math.max(...inc)*16.67 + " watts. A área necessária é de "+ Math.floor(100*placa*2.01)/100 + " metros quadrados";
 document.getElementById("texto-custo").innerHTML= " O payback é entre " + Math.floor(100*payback)/100 +
