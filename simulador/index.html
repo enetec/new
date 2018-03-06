@@ -125,7 +125,7 @@
 
 
               <form method="POST" action="http://formspree.io/suporte@enetec.unb.br">
-                <select id="sel" value="Unidade da Federação">
+                <select id="sel" name="Estado" value="Unidade da Federação">
 <option value="AC">AC</option>
 <option value="AL">AL</option>
 <option value="AP">AP</option>
@@ -154,11 +154,12 @@
 <option value="SE">SE</option>
 <option value="TO">TO</option>
                 </select>
-                <input id="nome" type="text" class="form-control" placeholder="Nome" required>
-                  <input id="email" type="email" class="form-control" placeholder="E-mail" required>
-              <input id="consumo" type="number" class="form-control" placeholder="Digite seu consumo, em kwh" required>
+                <input id="nome" name="nome" type="text" class="form-control" placeholder="Nome" required>
+                  <input id="email" name="email" type="email" class="form-control" placeholder="E-mail" required>
+              <input id="consumo" name="consumo"type="number" class="form-control" placeholder="Digite seu consumo, em kwh" required>
 
             <input type="submit" placeholder="Simular" class="btn btn-default" id="simule">
+            <input type="hidden" name="_next" value="#div-simulador">
           </form>
           <div style="display:none" id="div-simulador">
             <p id="texto-nome"></p>
