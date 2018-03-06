@@ -364,10 +364,10 @@ else {
 <script>
 var email= window.localStorage.getItem('email')
 var nome = window.localStorage.getItem('nome')
+console.log(nome);
 var Estado = window.localStorage.getItem('Estado')
 var consumo= window.localStorage.getItem('consumo')
 var inc = window.localStorage.getItem("incidencia")
-console.log (consumo*10 );
 
 if( window.localStorage.getItem('email')!=null &&
 window.localStorage.getItem('nome')!=null &&
@@ -376,10 +376,12 @@ window.localStorage.getItem('consumo')!=null &&
 window.localStorage.getItem("incidencia")!= null)
 {
   var i,media=0;
+  console.log(media);
   for (i=0;i<12;i++)
 {
 media=media + inc[i];
-
+  console.log(media);
+    console.log(inc[i]);
 }
  media=Math.floor(100*media/12)/100;
   console.log(media);
