@@ -216,7 +216,7 @@
 document.getElementById("simule").onclick=function(){
 
 window.localStorage.setItem('email',document.getElementById("email").value);
-window.localStorage.setItem('nome',document.getElementById("name".value));
+window.localStorage.setItem('nome',document.getElementById("name").value);
 window.localStorage.setItem('Estado',document.getElementById("sel").value);
 window.localStorage.setItem('consumo',document.getElementById("cons").value);
   var Estado=document.getElementById("sel").value;
@@ -367,7 +367,7 @@ var nome = window.localStorage.getItem('nome')
 var Estado = window.localStorage.getItem('Estado')
 var consumo= window.localStorage.getItem('consumo')
 var inc = window.localStorage.getItem("incidencia")
-console.log (Estado + nome + email + consumo + inc);
+console.log (consumo*10 );
 
 if( window.localStorage.getItem('email')!=null &&
 window.localStorage.getItem('nome')!=null &&
@@ -382,6 +382,7 @@ media=media + inc[i];
 
 }
  media=Math.floor(100*media/12)/100;
+  console.log(media);
   var input=document.getElementsByTagName("input");
 
   var placa=Math.floor(3.6*consumo/(media*0.5*30*2.01));
