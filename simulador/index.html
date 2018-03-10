@@ -63,7 +63,15 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
-               <li><a href="../index.html">Home</a></li>
+                <div class="dropdown">
+      <li><button class="dropbtn">Sobre nós</button></li>
+      <div class="dropdown-content">
+          <li><a href="../index.html">Institucional</a></li>
+              <li><a href="../ps.html">Processo Seletivo</a></li>
+      </div>
+    </div>
+
+
                     <li><a href="../work/index.html">Portfólio</a></li><div class="dropdown">
       <li><button class="dropbtn">Conteúdo</button></li>
       <div class="dropdown-content">
@@ -88,7 +96,7 @@
 
       </div>
     </div>
-                      <li><a href="#">Simulador de Paineis solares</a></li>
+                      <li><a href="../simulador/index.html">Simulador de Paineis solares</a></li>
                       <li><a href="../contact/index.html">Contato</a></li>
                   </ul>
                 </div><!-- /.navbar-collapse -->
@@ -161,7 +169,7 @@
             <input type="submit" placeholder="Simular" class="btn btn-default" id="simule"/>
             <input type="text" name="_gotcha" style="display:none"/>
             <input type="hidden" name="_next" value="#" />
-            <input type="hidden" name="_language" value= "pt_BR"/> 
+            <input type="hidden" name="_language" value= "pt_BR"/>
           </form>
           <div style="display:none" id="div-simulador">
             <p id="texto-nome"></p>
