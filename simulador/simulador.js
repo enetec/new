@@ -135,7 +135,7 @@ if(input[0].value!="" && input[1].value!="" && input[2].value!=""){
 
 
 
-  document.getElementById("texto-nome").innerHTML="Prezado " + document.getElementById("name").value + ",";
+  document.getElementById("texto-nome").innerHTML="Prezado(a) " + document.getElementById("name").value + ",";
 document.getElementById("texto-placas").innerHTML="Número de placas necessárias: "+ placa +
 " de "+ Math.max(...inc)*16.67 + " watts. A área necessária é de "+ Math.floor(100*placa*2.01)/100 + " metros quadrados.";
 document.getElementById("texto-custo").innerHTML= " O payback é entre " + Math.floor(100*payback)/100 +

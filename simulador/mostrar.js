@@ -27,7 +27,7 @@ media=parseInt(media,10) + parseInt(inc[i],10);
   var input=document.getElementsByTagName("input");
 
   var placa=Math.floor(3.6*consumo/(media*0.5*30*2.01));
-  var preço=1.05*(placa*700 +20000);
+  var preço=1.05*(placa*700+20000);
 
 
   var payback= 3.6*preço/(placa*media*0.5*2.01*30*0.45*12);
@@ -36,7 +36,7 @@ media=parseInt(media,10) + parseInt(inc[i],10);
 
 
 //coloca para o usuário ver
-  document.getElementById("texto-nome").innerHTML="Prezado " + nome + ",";
+  document.getElementById("texto-nome").innerHTML="Prezado(a) " + nome + ",";
 document.getElementById("texto-placas").innerHTML="Número de placas necessárias: "+ placa +
 " de "+ Math.floor(100*Math.max(...inc)*16.67)/100 + " watts. A área necessária é de "+ Math.floor(100*placa*2.01)/100 + " metros quadrados.";
 document.getElementById("texto-custo").innerHTML= " O payback é entre " + Math.floor(100*payback)/100 +
