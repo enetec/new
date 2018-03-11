@@ -1,11 +1,14 @@
 
 
 document.getElementById("simule").onclick=function(){
-
+// guarda em registro local os inputs
 window.localStorage.setItem('email',document.getElementById("email").value);
 window.localStorage.setItem('nome',document.getElementById("name").value);
 window.localStorage.setItem('Estado',document.getElementById("sel").value);
 window.localStorage.setItem('consumo',document.getElementById("cons").value);
+
+//estima a incidencia em cada Estado, baseado no Atlas:http://www.cresesb.cepel.br/publicacoes/download/Atlas_Solarimetrico_do_Brasil_2000.pdf
+//paginas 33 a 57
   var Estado=document.getElementById("sel").value;
 var inc=[1,2,3,4,5,6,7,8,9,10,11,12]
 if (Estado == "AC"){
@@ -134,7 +137,7 @@ if(input[0].value!="" && input[1].value!="" && input[2].value!=""){
 
   document.getElementById("texto-nome").innerHTML="Prezado " + document.getElementById("name").value + ",";
 document.getElementById("texto-placas").innerHTML="Número de placas necessárias: "+ placa +
-" de "+ Math.max(...inc)*16.67 + " watts. A área necessária é de "+ Math.floor(100*placa*2.01)/100 + " metros quadrados";
+" de "+ Math.max(...inc)*16.67 + " watts. A área necessária é de "+ Math.floor(100*placa*2.01)/100 + " metros quadrados.";
 document.getElementById("texto-custo").innerHTML= " O payback é entre " + Math.floor(100*payback)/100 +
  " e  " + Math.floor(110*payback)/100 + " anos."
 
