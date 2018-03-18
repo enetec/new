@@ -6,8 +6,8 @@
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-88208769-1"></script>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<title>ENETEC Consultoria Júnior</title>
-<meta name="description" content="">
+<title>ENETEC- Simulador</title>
+<meta name="description" content="Simulamos de graça o tamanho de um projeto fotovoltaico e o seu tempo de retorno">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 <link rel="shortcut icon" href="../favicon.ico" />
@@ -63,10 +63,10 @@
                 <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                   <ul class="nav navbar-nav navbar-right">
-                
-   
+
+
               <li><a href="../ps.html">Processo Seletivo</a></li>
-    
+
 
 
                     <li><a href="../work/index.html">Portfólio</a></li><div class="dropdown">
@@ -130,7 +130,7 @@
 
 
               <form method="POST" action="http://formspree.io/suporte@enetec.unb.br">
-                <select id="sel" name="Estado" value="Unidade da Federação">
+                <select id="sel" name="Estado" value="DF" required>
 <option value="AC">AC</option>
 <option value="AL">AL</option>
 <option value="AP">AP</option>
@@ -168,14 +168,16 @@
             <input type="hidden" name="_next" value="#" />
             <input type="hidden" name="_language" value= "pt_BR"/>
           </form>
+
           <div style="display:none" id="div-simulador">
             <p id="texto-nome"></p>
             <p id="texto-placas">
 
             </p>
 <p id="texto-custo">
-
 </p>
+<canvas id="grafico" width="520%" height="200%" style=" border:1px solid #000000;">
+</canvas>
 <p>
   Lembrando que essas medidas são uma estimativa
 </p>

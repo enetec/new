@@ -27,8 +27,7 @@ media=parseInt(media,10) + parseInt(inc[i],10);
   var input=document.getElementsByTagName("input");
 
   var placa=Math.floor(3.6*consumo/(media*0.5*30*2.01));
-  var preço=1.05*(placa*700+20000);
-
+  var preço=1.05*(placa*700+5000);
 
   var payback= 3.6*preço/(placa*media*0.5*2.01*30*0.45*12);
 
@@ -41,6 +40,33 @@ document.getElementById("texto-placas").innerHTML="Número de placas necessária
 " de "+ Math.floor(100*Math.max(...inc)*16.67)/100 + " watts. A área necessária é de "+ Math.floor(100*placa*2.01)/100 + " metros quadrados.";
 document.getElementById("texto-custo").innerHTML= " O payback é entre " + Math.floor(100*payback)/100 +
  " e  " + Math.floor(110*payback)/100 + " anos."
+
+var canvas = document.getElementById("grafico");
+var ctx = canvas.getContext('2d');
+//cria eixo y
+ctx.beginPath();
+
+ctx.moveTo(0,canvas.height/2);
+
+ctx.lineTo(canvas.width,canvas.height/2);
+
+ctx.stroke();
+
+//cria eixo x
+ctx.beginPath();
+
+ctx.moveTo(10,canvas.height);
+
+ctx.lineTo(10,0);
+
+ctx.stroke();
+
+//cria o gráfico de energia(kwh)x mês
+for (i=0;i<12;i++){
+ctx.fillRect(15+43*i , parseInt(inc[i])*16.67/1000*30*8, 26,-parseInt(inc[i])*16.67/1000*30*8 + canvas.height/2 );
+
+
+}
 
 document.getElementById("div-simulador").style.display="block";
 

@@ -127,13 +127,12 @@ window.localStorage.setItem("incidencia"+i,inc[i]);
 
   var placa=Math.floor(3.6*document.getElementById("cons").value/(media*0.5*30*2.01));
   window.localStorage.setItem('placa',placa);
-  var preço=1.05*(placa*700 +20000);
-  var preçomax=1.1*preço;
-  var payback= 1000*preço/(160*placa*0.6*8*365);
+  var preço=1.05*(placa*700+5000);
+  var payback= 3.6*preço/(placa*media*0.5*2.01*30*0.45*12);
 
 if(input[0].value!="" && input[1].value!="" && input[2].value!=""){
 
-
+/*
 
   document.getElementById("texto-nome").innerHTML="Prezado(a) " + document.getElementById("name").value + ",";
 document.getElementById("texto-placas").innerHTML="Número de placas necessárias: "+ placa +
@@ -142,8 +141,9 @@ document.getElementById("texto-custo").innerHTML= " O payback é entre " + Math.
  " e  " + Math.floor(110*payback)/100 + " anos."
 
 document.getElementById("div-simulador").style.display="block";
-
+*/
 }
+
 else {
   alert("Preencha todos os campos por favor");
 }
