@@ -3,9 +3,12 @@
 document.getElementById("simule").onclick=function(){
 // guarda em registro local os inputs
 window.localStorage.setItem('email',document.getElementById("email").value);
+window.localStorage.setItem('tarifa',document.getElementById("tarifa").value);
 window.localStorage.setItem('nome',document.getElementById("name").value);
 window.localStorage.setItem('Estado',document.getElementById("sel").value);
 window.localStorage.setItem('consumo',document.getElementById("cons").value);
+
+console.log( window.localStorage.getItem('tarifa'))
 
 //estima a incidencia em cada Estado, baseado no Atlas:http://www.cresesb.cepel.br/publicacoes/download/Atlas_Solarimetrico_do_Brasil_2000.pdf
 //paginas 33 a 57
@@ -124,11 +127,6 @@ window.localStorage.setItem("incidencia"+i,inc[i]);
 }
  media=Math.floor(100*media/12)/100;
   var input=document.getElementsByTagName("input");
-
-  var placa=Math.floor(3.6*document.getElementById("cons").value/(media*0.5*30*2.01));
-  window.localStorage.setItem('placa',placa);
-  var preço=1.05*(placa*700+5000);
-  var payback= 3.6*preço/(placa*media*0.5*2.01*30*0.45*12);
 
 if(input[0].value!="" && input[1].value!="" && input[2].value!=""){
 
