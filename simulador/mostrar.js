@@ -28,7 +28,7 @@ media = parseInt(media,10) + parseInt(inc[i],10);
 
 
   var placa = Math.floor(3.6*consumo/(media*0.5*30*2.01));
-/
+/*
   var inv = Math.floor(placa*36/1000) + 1
 
   var preço = 780*placa + 5000*inv ;
