@@ -13,7 +13,7 @@ Estado != null &&
 consumo != null &&
 tarifa != null )
 {
-  var media,i = 0;
+  var media = 0;
   var canvas = document.getElementById("grafico");
   var ctx = canvas.getContext('2d');
   //cria eixo y
@@ -36,7 +36,22 @@ tarifa != null )
 
   //cria o gráfico de energia(kwh)x mês e calcula a média de incidência
   for (i=0; i<12; i++){
+
     inc[i] = window.localStorage.getItem("incidencia"+ i);
+    console.log(inc[i])
+    //muda a cor dos retângulos
+if (parseInt(inc[i]) < 16){
+  ctx.fillStyle="#FF0000";
+}
+else if (parseInt(inc[i])  < 20) {
+  ctx.fillStyle="#0000ff";
+}
+else {
+  ctx.fillStyle="#00ff00";
+
+
+}
+
     ctx.fillRect(15+43*i , parseInt(inc[i])*16.67/1000*30*8, 26,-parseInt(inc[i])*16.67/1000*30*8 + canvas.height/2 );
     media = parseInt(media,10) + parseInt(inc[i],10);
   }
