@@ -7,6 +7,8 @@ var tarifa= window.localStorage.getItem('tarifa')
 
 var inc = [0,0,0,0,0,0,0,0,0,0,0,0];
 
+var meses= ['jan', 'fev', 'mar', 'abr', 'maio', 'jun', 'jul', 'ago', 'set', 'out', 'nov', 'dez']
+
 if(email !=null &&
 nome != null &&
 Estado != null &&
@@ -25,6 +27,7 @@ tarifa != null )
 
   ctx.stroke();
 
+ctx.fillText('kWh', 6, 20 );
   //cria eixo x
   ctx.beginPath();
 
@@ -34,6 +37,8 @@ tarifa != null )
 
   ctx.stroke();
 
+  ctx.fillText('mês', canvas.width - 29, canvas.height/2 + 15);
+
   //cria o gráfico de energia(kwh)x mês e calcula a média de incidência
   for (i=0; i<12; i++){
 
@@ -41,7 +46,7 @@ tarifa != null )
     console.log(inc[i])
     //muda a cor dos retângulos
 if (parseInt(inc[i]) < 16){
-  ctx.fillStyle="#FF0000";
+  ctx.fillStyle="#ff0000";
 }
 else if (parseInt(inc[i])  < 20) {
   ctx.fillStyle="#0000ff";
@@ -52,7 +57,14 @@ else {
 
 }
 
+var y=Math.floor (parseInt(inc[i])*16.67/1000*30*8);
     ctx.fillRect(15+43*i , parseInt(inc[i])*16.67/1000*30*8, 26,-parseInt(inc[i])*16.67/1000*30*8 + canvas.height/2 );
+
+    ctx.fillStyle="#000000"
+
+    ctx.fillText(meses[i],15 + 43*i, canvas.height/2+ 29);
+
+
     media = parseInt(media,10) + parseInt(inc[i],10);
   }
 
